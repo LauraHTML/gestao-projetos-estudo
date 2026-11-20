@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@import "../styles/tokens/colors.css";
+@import "../styles/tokens/spacing.css";
+
+@theme inline {
+  /* Color tokens bound to Tailwind CSS v4 utilities */
+  --color-surface-canvas: var(--color-surface-canvas);
+  --color-surface-sidebar: var(--color-surface-sidebar);
+  --color-surface-elevated: var(--color-surface-elevated);
+  --color-surface-card: var(--color-surface-card);
+  --color-surface-hover: var(--color-surface-hover);
+  --color-surface-recessed: var(--color-surface-recessed);
+  --color-surface-overlay: var(--color-surface-overlay);
+
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-default: var(--color-border-default);
+  --color-border-strong: var(--color-border-strong);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-inverse: var(--color-text-inverse);
+
+  --color-accent-primary: var(--color-accent-primary);
+  --color-accent-primary-hover: var(--color-accent-primary-hover);
+  --color-accent-primary-soft: var(--color-accent-primary-soft);
+  --color-accent-primary-muted: var(--color-accent-primary-muted);
+  --color-accent-steel: var(--color-accent-steel);
+
+  --color-status-done: var(--color-status-done);
+  --color-status-done-soft: var(--color-status-done-soft);
+  --color-status-progress: var(--color-status-progress);
+  --color-status-progress-soft: var(--color-status-progress-soft);
+  --color-status-blocked: var(--color-status-blocked);
+  --color-status-blocked-soft: var(--color-status-blocked-soft);
+  --color-status-idle: var(--color-status-idle);
+  --color-status-idle-soft: var(--color-status-idle-soft);
+
+  /* Spacing tokens bound to Tailwind utilities (e.g. p-space-md, gap-space-lg) */
+  --spacing-space-2xs: var(--space-2xs);
+  --spacing-space-xs: var(--space-xs);
+  --spacing-space-sm: var(--space-sm);
+  --spacing-space-md: var(--space-md);
+  --spacing-space-lg: var(--space-lg);
+  --spacing-space-xl: var(--space-xl);
+  --spacing-space-2xl: var(--space-2xl);
+  --spacing-space-3xl: var(--space-3xl);
+
+  /* Radius tokens */
+  --radius-token-sm: var(--radius-sm);
+  --radius-token-md: var(--radius-md);
+  --radius-token-lg: var(--radius-lg);
+  --radius-token-full: var(--radius-full);
+
+  /* Typography */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--color-surface-canvas);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-primary-muted);
+    color: var(--color-text-primary);
+  }
+}
+
+/* Tactile dark surface elevation helper */
+.surface-panel {
+  background-color: var(--color-surface-elevated);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-inset-top);
+}
+
+.surface-card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-inset-top);
+}
+
+.surface-recessed {
+  background-color: var(--color-surface-recessed);
+  border: 1px solid var(--color-border-subtle);
+}
+
+/* Subtle dark scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-default);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-strong);
+}
